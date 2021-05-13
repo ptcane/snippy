@@ -1,0 +1,46 @@
+<!--
+
+---
+jupyter:
+  jupytext:
+    hide_notebook_metadata: true
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.11.2
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+-->
+
+<pre><code class="language-python">import json
+</code></pre>
+<pre><code class="language-python">with open('lists.ipynb') as f:
+    data = json.load(f)
+</code></pre>
+<pre><code class="language-python">data
+</code></pre>
+<pre><code class="language-python">data['cells']
+</code></pre>
+<pre><code class="language-python">cells = data['cells']
+</code></pre>
+<pre><code class="language-python">for cell in cells:
+    cell['metadata'] = dict()
+</code></pre>
+<pre><code class="language-python">cells
+</code></pre>
+<pre><code class="language-python">data['cells'] = cells
+</code></pre>
+<pre><code class="language-python">with open('lists_new.ipynb', 'w') as f:
+    f.write(json.dumps(data))
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">
+</code></pre>

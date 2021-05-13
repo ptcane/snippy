@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="operations" class="hidden">
+  {% include 'operations.html' %}
+  </section>
+    <section id="kernel">
+      <div><h5>Kernel: <span id="status"></span></h5>
+      </div>
+      <!--
+      <div>
+    <button class="localhost"> Use localhost</button>
+    </div>
+    -->
+    </section>
+
+<section id="notebook">
+  
+{% include 'html_notebooks/' + nb + '.html' %}
+
+</section>
+
+{% endblock %}

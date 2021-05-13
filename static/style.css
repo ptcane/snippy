@@ -1,0 +1,134 @@
+.thebelab-restart-button,
+.thebelab-restartall-button {
+  display: none;
+}
+
+
+section#notebook .thebelab-cell:nth-of-type(1) .thebelab-restart-button,
+section#notebook .thebelab-cell:nth-of-type(1) .thebelab-restartall-button {
+  display: inherit;
+  float: right;
+}
+
+
+div.thebelab-input span {
+  font-size: 1.2rem;
+}
+
+div.thebelab-input {
+  margin: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#operations {
+  padding: 1rem;
+}
+
+#status {
+  text-transform: uppercase
+}
+#status.ready {
+  color: var(--green);
+}
+
+.thebelab-button,
+.localhost { 
+  text-transform: uppercase;
+  margin: 0.5rem;
+  padding: 0rem 0.5rem;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background-color: #fff;
+}
+
+.thebelab-button:hover,
+.localhost:hover {
+  color: #fff;
+  background-color: var(--primary);
+}
+
+.thebelab-restart-button,
+.thebelab-restartall-button {
+  color: var(--green);
+  background-color: #fff;
+  border: 1px solid var(--green);
+}
+
+.thebelab-restart-button:hover,
+.thebelab-restartall-button:hover {
+  color: #fff;
+  background-color: var(--green);
+}
+
+#load-save {
+  border: 1px solid var(--green);
+  background-color: #fff;
+  color: var(--green);  
+}
+
+#load-save:hover {
+  background-color: var(--green);
+  color: #fff;  
+}
+
+section#notebook .thebelab-run-button::before {
+  content: "> ";
+}
+
+div.thebelab-input {
+  border-block-end: 1px solid #ccc;
+}
+
+select {
+    line-height: inherit;
+}
+
+code {
+  font-size: inherit!important;
+}
+
+
+body {
+  margin: auto;
+  max-width: 60rem; 
+}
+
+body > * {
+  margin: 1rem;
+}
+
+header,
+section#kernel {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+main a {
+  color: var(--green)!important;
+}
+
+nav > * {
+  text-transform: uppercase;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+section, footer {
+  border-top: 1px solid var(--grey);
+}
+
+footer {
+  padding-top: 1rem;
+}
+
+form {
+  max-width: 30rem;
+}
+
+

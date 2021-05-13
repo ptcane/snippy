@@ -1,0 +1,26 @@
+<form>
+    <label for="upload">Upload Notebook
+  <input type="file">
+</label>
+</form> 
+  <form>    
+  <label>Load Notebook
+    <select name="notebook">
+      {% for nb in nbs %}
+      <option value="{{nb}}">{{nb}}</option>
+      {% endfor %}
+    </select>
+  </label>
+  </form>
+  <form>    
+  <label>Save Notebook
+    <select name="notebook">
+      <option value="" disabled selected>Select your option</option>
+      
+
+      <option value="message">Message</option>
+      <option value="feature">Feature</option>
+      <option value="report">Report</option>
+    </select>
+  </label>
+  </form>

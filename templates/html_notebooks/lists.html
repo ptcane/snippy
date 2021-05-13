@@ -1,0 +1,203 @@
+<!--
+
+---
+jupyter:
+  jupytext:
+    hide_notebook_metadata: true
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.11.2
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+-->
+
+<h2>Python Lists, Tuples &amp; Dictionaries</h2>
+<h4>PCEP Exam block #4: Data Collections</h4>
+<h2>Lists</h2>
+<h4>What's the intended purpose of a Python <code>list</code>?</h4>
+<ul>
+<li>To store an <strong>ordered collection</strong> of <strong>related items</strong></li>
+<li>To allow items to be <strong>retrieved</strong> according to their <strong>position</strong></li>
+<li>To enable items to be <strong>added</strong>, <strong>removed</strong> or <strong>modified</strong> </li>
+</ul>
+<h4>What might we store in a list?</h4>
+<ul>
+<li>Names of players in a cricket team</li>
+<li>Songs in an album of music</li>
+</ul>
+<!-- #region -->
+<h3>Lists: Examples &amp; Syntax</h3>
+<pre><code class="language-python">scores = [16, 104, 3, 77, 29, 55, 18]
+members = ['John', 'Raj', 'Emily']
+details = [4, 7, 'John', False]
+details
+</code></pre>
+<ul>
+<li>Lists are surrounded by <code>[</code>square brackets<code>]</code></li>
+<li>Each element in a list is separated by a comma <code>,</code></li>
+</ul>
+<!-- #endregion -->
+
+<!-- #region -->
+<h3>Lists: Properties</h3>
+<pre><code class="language-python">stuff = ['Banana', 22, False, ['Richmond', 'Surbiton', 'Twickenham']]
+results = ['A', [12, 17, 4, True], 57, 23, None]
+results
+</code></pre>
+<ul>
+<li>Elements can be <strong>different data types</strong></li>
+<li>Elements can themselves be lists or <strong>other data structures</strong></li>
+</ul>
+<p><em>Although Python allows this, typically list elements have the same type or structure.</em></p>
+<!-- #endregion -->
+
+<h3>Lists: Retrieving Elements</h3>
+<pre><code class="language-python">ratings = [8, 7, 6, 8, 4, 3, 10, 8, 6]
+grades = ['C', 'B', 'A', 'C', 'D']
+
+print(ratings[0])
+print(grades[-1])
+print(grades[1:3])
+
+</code></pre>
+<ul>
+<li>Lists are <strong>zero-indexed</strong> and elements are accessed by position, i.e. <strong>index</strong></li>
+<li>A <strong>single element</strong> can be retrieved using <code>[index]</code><ul>
+<li>negative values can be used to index relative to the end of the list</li>
+</ul>
+</li>
+<li><strong>Multiple elements</strong> can be retrived using <code>[start:end]</code><ul>
+<li>up to, but not including, the element at <code>end</code></li>
+</ul>
+</li>
+</ul>
+<p>The same syntax can be used on strings.</p>
+<p>We also have the <code>step</code> parameter, which can be used after a second colon <code>[start:end:step]</code></p>
+<h3>Lists:  Methods</h3>
+<p>Lists have numerous associated <strong>methods</strong>:</p>
+<p><img src="images/list-methods.png" width="70%" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  ">
+<br></p>
+<p><em>Source: <a href="https://www.w3schools.com/python/python_ref_list.asp">w3schools</a></em></p>
+<p>Methods being <strong>functions</strong> which take the associated list as an argument.</p>
+<p>We can get a feel from the method names and descriptions what kind of operations are expected to be performed on lists.</p>
+<h2>Tuples</h2>
+<h4>What's the intended purpose of a Python <code>tuple</code>?</h4>
+<ul>
+<li>To <strong>group related items</strong> in a <strong>specific order</strong> to create a single collection or <strong>record</strong> </li>
+</ul>
+<h4>What might we store in a tuple?</h4>
+<ul>
+<li>An address, split into distinct components,for example:<br />
+<code>house_number</code>, <code>road</code>, <code>town</code>, <code>postcode</code></li>
+</ul>
+<h4>Why not just use a list?</h4>
+<ul>
+<li>Use of a tuple indicates that each element has <strong>distinct features</strong> or <strong>meaning</strong></li>
+</ul>
+<!-- #region -->
+<h3>Tuples: Examples &amp; Syntax</h3>
+<pre><code class="language-python">john = ('John Smith', 47, 'Chef', 'London')
+raj = ('Raj Patel', 32, 'Web Developer', 'Oxford')
+
+london = ('scattered showers', 3, 14)
+new_york = ('sunny', 16, 24)
+</code></pre>
+<ul>
+<li>Tuples are surrounded by <code>(</code>round brackets<code>)</code></li>
+<li>Each element in a tuple is separated by a comma <code>,</code></li>
+</ul>
+<!-- #endregion -->
+
+<p>As the examples allude to, when working with tuples it will typically be with several tuples with the same structure rather than a single tuple in isolation.</p>
+<!-- #region -->
+<h3>Tuples: Properties</h3>
+<ul>
+<li>
+<p>Tuples can contain elements which have <strong>different data types</strong> or structures </p>
+<p>... but unlike lists, <strong>often do in practice</strong> too</p>
+</li>
+<li>
+<p>Tuples cannot be modified; they are <strong>immutable</strong></p>
+</li>
+</ul>
+<!-- #endregion -->
+
+<h3>Tuples: Retrieving elements</h3>
+<p>Elements can be retrieved using the same indexing syntax as for lists:</p>
+<pre><code class="language-python">helen = ('Helen Jones', 27, 'Surgeon', 'Bristol')
+print(helen[0])
+print(helen[-2:])
+</code></pre>
+<h3>Tuples: Methods</h3>
+<p>Methods are much more limited than for lists:</p>
+<p><img src="images/tuple-methods.png" width="70%" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  ">
+<br>
+<em>Source: <a href="https://www.w3schools.com/python/python_ref_tuple.asp">w3schools</a></em></p>
+<p>Both of these methods are available with lists; the other list methods relate to modification, which is not possible with tuples.</p>
+<p>In practice, a tuple might in effect be 'modified' through, for example, its removal and replacement as an element in a list.</p>
+<h2>Dictionaries</h2>
+<h4>What's the intended purpose of a Python <code>dict</code>ionary?</h4>
+<ul>
+<li>To store an <strong>ordered collection</strong> of <strong>related items</strong></li>
+<li>To allow items to be <strong>retrieved</strong>, <strong>added</strong>, <strong>removed</strong> or <strong>modified</strong> according to their <strong>position</strong></li>
+</ul>
+<h4>What might we store in one?</h4>
+<ul>
+<li>Names of players in a cricket team</li>
+<li>Songs in an album of music</li>
+</ul>
+<h3>List Methods: Examples</h3>
+<h4>Adding elements:</h4>
+<pre><code class="language-python">preferences = [1, 2, 1, 3, 4, 1, 3, 2]
+preferences.append(1)
+preferences
+</code></pre>
+<pre><code class="language-python">extra = [1, 0, 1]
+preferences.extend(extra)
+preferences
+</code></pre>
+<pre><code class="language-python">preferences.insert(3, 0)
+preferences
+</code></pre>
+<h4>List attributes:</h4>
+<pre><code class="language-python">preferences
+</code></pre>
+<pre><code class="language-python">len(preferences)
+</code></pre>
+<pre><code class="language-python">preferences.count(1)
+</code></pre>
+<pre><code class="language-python">preferences.index(4)
+</code></pre>
+<p>Notice that we used the built-in function <code>len()</code> rather than a list method to get the length.</p>
+<h4>Sorting lists:</h4>
+<pre><code class="language-python">prefs_sorted = sorted(preferences)
+prefs_sorted
+</code></pre>
+<pre><code class="language-python">prefs_sorted.reverse()
+prefs_sorted
+</code></pre>
+<h3>Combining data structures</h3>
+<p>Remember that elements can themselves be data structures, so we might have:</p>
+<ul>
+<li>
+<p>A <strong>list of dictionaries</strong>, each of which has details about a player in a team  </p>
+<ul>
+<li>and in which the <code>scores</code> key has a value which is a list of scores</li>
+</ul>
+</li>
+<li>
+<p>A <strong>list of tuples</strong>, each of which has the title and length of a song on an album</p>
+</li>
+</ul>
