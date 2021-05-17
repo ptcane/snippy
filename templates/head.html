@@ -1,13 +1,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="pypage - interactive Python pages on replit.">
+<meta name="description" content="Snippy - interactive Python snips on replit.">
 <meta name="theme-color" content="#4a69bd">
-<title>pypage</title>
+<title>Snippy</title>
 <style>
 	.wf-loading * {
 		opacity: 0;
 	}
 </style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/favicon.ico">
@@ -17,7 +19,7 @@
 <link rel="stylesheet" href="style.css">
 <!-- Configure and load Thebe !-->
 <script type="text/x-thebe-config">
-	{ requestKernel: true, bootstrap: true, binderOptions: { repo: "binder-examples/requirements", }, codeMirrorConfig: { theme:
+	{ requestKernel: true, bootstrap: true, binderOptions: { repo: "{{repo}}", }, codeMirrorConfig: { theme:
 	"abcdef" }, }
 </script>
 <script src="https://unpkg.com/thebe@latest/lib/index.js">

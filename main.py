@@ -1,24 +1,20 @@
 from flask import Flask, render_template,send_from_directory, request
 from build import initialize
-from operations import notebook_list
+from operations import snip_list
 
 initialize()
 
+repo = "ptcane/snippy"
+
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
 
-  nbs = notebook_list()
+  snips = snip_list()
+  snip = request.args.get("snip", "home")
 
-  if request.method == 'GET':
-    return render_template('index.html', nb='home', nbs=nbs)
-
-  else:
-    nb='home'            
-    return render_template('index.html', nb=nb)
-
-
+  return render_template('index.html', snip=snip, snips=snips, repo=repo)
 
 @app.route('/<path:filename>.<ext>')
 def static_files(filename, ext):

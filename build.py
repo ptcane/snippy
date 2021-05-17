@@ -18,6 +18,8 @@ def copy_image(file_name):
 def convert_notebook(nb_file):
 
   nb_name = nb_file.rsplit(r'/')[1].split('.')[0]
+
+  #Use jupytext to convert to markdown
   subprocess.run(["jupytext", "--to", "markdown", f"notebooks/{nb_name}.ipynb"])
   
   #Convert markdown to HTML
@@ -26,7 +28,7 @@ def convert_notebook(nb_file):
       html = markdown.markdown(text, extensions=['fenced_code'])
   
   #Write HTML to new file
-  with open(f'templates/html_notebooks/{nb_name}.html', 'w') as f:
+  with open(f'templates/snips/{nb_name}.html', 'w') as f:
       f.write(html)
 
   images = ' '.join(re.findall(r'\ssrc="([^"]+)"', html))
@@ -35,12 +37,11 @@ def convert_notebook(nb_file):
 
 def initialize():
 
-  #identify and convery notebooks
+  #Identify and convert notebooks
   nbs = glob(r'notebooks/*.ipynb')
   [convert_notebook(nb) for nb in nbs]
 
   #Copy images
-
   source_dir = r'notebooks/images/'
   file_names = os.listdir(source_dir)
   

@@ -1,11 +1,30 @@
+span.py {
+  color: #397cae; 
+}
+
+span.py_y {
+  color: #fccc3b;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+pre {
+  font-size: 1.2rem!important;
+}
+
+footer a {
+  color: var(--green)!important;
+}
+
 .thebelab-restart-button,
 .thebelab-restartall-button {
   display: none;
 }
 
 
-section#notebook .thebelab-cell:nth-of-type(1) .thebelab-restart-button,
-section#notebook .thebelab-cell:nth-of-type(1) .thebelab-restartall-button {
+section#notebook .thebelab-cell:nth-of-type(1) .thebelab-restart-button {
   display: inherit;
   float: right;
 }
@@ -35,7 +54,8 @@ div.thebelab-input {
 }
 
 .thebelab-button,
-.localhost { 
+.localhost
+ { 
   text-transform: uppercase;
   margin: 0.5rem;
   padding: 0rem 0.5rem;
@@ -45,10 +65,13 @@ div.thebelab-input {
 }
 
 .thebelab-button:hover,
-.localhost:hover {
+.localhost:hover
+ {
   color: #fff;
   background-color: var(--primary);
 }
+
+
 
 .thebelab-restart-button,
 .thebelab-restartall-button {
@@ -63,14 +86,17 @@ div.thebelab-input {
   background-color: var(--green);
 }
 
-#load-save {
-  border: 1px solid var(--green);
+#load,
+#add-cell {
+  text-transform: uppercase;
+  border: 1px dashed var(--primary);
   background-color: #fff;
-  color: var(--green);  
+  color: var(--primary);  
 }
 
-#load-save:hover {
-  background-color: var(--green);
+#load:hover,
+#add-cell:hover {
+  background-color: var(--primary);
   color: #fff;  
 }
 
@@ -125,6 +151,7 @@ section, footer {
 
 footer {
   padding-top: 1rem;
+  text-align: right;
 }
 
 form {
