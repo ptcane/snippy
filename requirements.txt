@@ -1,5 +1,5 @@
 wordcloud==1.5.0
 matplotlib==3.4.2
-numpy==1.2.0
+numpy==1.1.0
 pyqrcode==1.2.1
 qrcode==6.1
