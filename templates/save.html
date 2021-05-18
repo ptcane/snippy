@@ -1,0 +1,8 @@
+<form action="." method="POST" id="save-form">
+  <input type="hidden" id="nb-code" name="nb-code" value="empty">
+  <label for="filename">Snip name</label>
+  <input type="text" placeholder="name (without file extension)" value="{% if snip !='[NEW]' %}{{ snip }}{% endif %}" id="filename" name="filename" required>
+  <label for="password">Password</label>
+  <input type="password" placeholder="Replit 'pw' Secret" id="password" name="password" required>
+  <input type="submit" value="SAVE" id="save-snip">
+   </form>

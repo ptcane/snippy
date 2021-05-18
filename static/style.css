@@ -1,6 +1,12 @@
+#save {
+  float: right;
+}
+
+
 jp-OutputArea-Output {
   height: 800px!important;
 }
+
 
 span.py {
   color: #397cae; 
@@ -46,7 +52,8 @@ div.thebelab-input {
   display: none;
 }
 
-#operations {
+#operations,
+#save-section {
   padding: 1rem;
 }
 
@@ -91,6 +98,7 @@ div.thebelab-input {
 }
 
 #load,
+#save,
 #add-cell {
   text-transform: uppercase;
   border: 1px dashed var(--primary);
@@ -99,6 +107,7 @@ div.thebelab-input {
 }
 
 #load:hover,
+#save:hover,
 #add-cell:hover {
   background-color: var(--primary);
   color: #fff;  
@@ -131,12 +140,16 @@ body > * {
 }
 
 header,
-section#kernel {
+section#kernel,
+section#controls {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   column-gap: 2rem;
+}
+section#controls {
+align-items: unset;
 }
 
 main a {

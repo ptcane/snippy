@@ -1,19 +1,34 @@
 from flask import Flask, render_template,send_from_directory, request
 from operations import snip_list
-from build import initialize
-initialize()
+from os import getenv
+#from build import initialize
+#initialize()
 
-repo = "ptcane/snippy"
+try:
+  repo = getenv("repo")
+except:
+  repo = "binder-examples/requirements"
 
 app = Flask(__name__)
 
-@app.route('/')
+def save_snip(html, filename):
+  return None
+
+
+@app.route('/', methods=["GET", "POST"])
 def index():
 
   snips = snip_list()
-  snip = request.args.get("snip", "home")
 
-  return render_template('index.html', snip=snip, snips=snips, repo=repo)
+  if request.method=="POST":
+    current = request.form['nb-code']
+    snip = None
+
+  else:
+    snip = request.args.get("snip", "home")
+    current = None
+
+  return render_template('index.html', snip=snip, snips=snips, repo=repo, current=current)
 
 @app.route('/<path:filename>.<ext>')
 def static_files(filename, ext):

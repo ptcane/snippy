@@ -17,30 +17,5 @@ jupyter:
 
 -->
 
-<pre><code class="language-python">import json
-</code></pre>
-<pre><code class="language-python">with open('lists.ipynb') as f:
-    data = json.load(f)
-</code></pre>
-<pre><code class="language-python">data
-</code></pre>
-<pre><code class="language-python">data['cells']
-</code></pre>
-<pre><code class="language-python">cells = data['cells']
-</code></pre>
-<pre><code class="language-python">for cell in cells:
-    cell['metadata'] = dict()
-</code></pre>
-<pre><code class="language-python">cells
-</code></pre>
-<pre><code class="language-python">data['cells'] = cells
-</code></pre>
-<pre><code class="language-python">with open('lists_new.ipynb', 'w') as f:
-    f.write(json.dumps(data))
-</code></pre>
-<pre><code class="language-python">
-</code></pre>
-<pre><code class="language-python">
-</code></pre>
 <pre><code class="language-python">
 </code></pre>

@@ -10,8 +10,30 @@
 
 <section id="notebook">
   
-{% include 'snips/' + snip + '.html' %}
 
+{% if current %}
+{{ current|safe }}
+{% endif %}
+
+{% if snip %}
+{% include 'snips/' + snip + '.html' %}
+{% endif %}
+
+</section>
+<a id="control_anchor"></a>
+<section id="controls">
+  <form action=".#control_anchor" method="POST" id="add-cell-form">
+    <input type="hidden" id="add-cell-input" name="nb-code" value="add-cell">  
+  <input type="submit" value="Add Cell" id="add-cell">
+  </form>
+  <button id="save">Save Snip</button>
+
+  
+  
+ 
+</section>
+<section id="save-section" class="hidden">
+  {% include 'save.html' %}
 </section>
 
 {% endblock %}
