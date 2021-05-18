@@ -1,7 +1,6 @@
 from flask import Flask, render_template,send_from_directory, request
-from build import initialize
 from operations import snip_list
-
+from build import initialize
 initialize()
 
 repo = "ptcane/snippy"

@@ -2,3 +2,6 @@ wordcloud
 matplotlib
 numpy
 qrcode
+nltk
+bs4
+requests
