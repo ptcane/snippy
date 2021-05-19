@@ -8,7 +8,10 @@
   <header>
 		<h1>Snip<span class="py">p</span><span class="py_y">y</span></h1>
     <nav>
-    <button id="load">Load Snip</button>    
+    <form>
+    <input type="submit" id="new" name="new" value="new"></input>
+    </form>     
+    <button id="load">Load</button>    
 	</nav>
 	</header>
 
@@ -16,7 +19,11 @@
     {% block content %}{% endblock %}
 	</main>
 	<footer>
+    <div>&copy; datadesigns</div>
+    </div>
+    <div>
     Fork on <a href="https://replit.com/@datadesigns/pypage" target=_blank">replit</a>
+    </div>
 	</footer>
   <script src="script.js"></script>
 </body>

@@ -6,6 +6,15 @@
     <section id="kernel">
       <div><h5>Kernel: <span id="status"></span></h5>
       </div>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
     </section>
 
 <section id="notebook">
@@ -16,7 +25,7 @@
 {% endif %}
 
 {% if snip %}
-{% include 'snips/' + snip + '.html' %}
+{% include snip + '.html' %}
 {% endif %}
 
 </section>
@@ -26,11 +35,7 @@
     <input type="hidden" id="add-cell-input" name="nb-code" value="add-cell">  
   <input type="submit" value="Add Cell" id="add-cell">
   </form>
-  <button id="save">Save Snip</button>
-
-  
-  
- 
+  <button id="save">Save</button> 
 </section>
 <section id="save-section" class="hidden">
   {% include 'save.html' %}

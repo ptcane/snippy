@@ -1,7 +1,24 @@
+:root {
+    --blue: #397cae;
+    --orange: #fccc3b;
+}
+
+
+li.success {
+  color: var(--green);
+}
+
+li.error {
+  color: var(--red);
+}
+
+nav > form {
+  display: inline-block;
+}
+
 #save {
   float: right;
 }
-
 
 jp-OutputArea-Output {
   height: 800px!important;
@@ -101,7 +118,7 @@ div.thebelab-input {
 #save,
 #add-cell {
   text-transform: uppercase;
-  border: 1px dashed var(--primary);
+  border: 1px solid var(--primary);
   background-color: #fff;
   color: var(--primary);  
 }
@@ -110,6 +127,18 @@ div.thebelab-input {
 #save:hover,
 #add-cell:hover {
   background-color: var(--primary);
+  color: #fff;  
+}
+
+#new {
+  text-transform: uppercase;
+  border: 1px dashed var(--green);
+  background-color: #fff;
+  color: var(--green);  
+}
+
+#new:hover {
+  background-color: var(--green);
   color: #fff;  
 }
 
@@ -140,6 +169,7 @@ body > * {
 }
 
 header,
+footer,
 section#kernel,
 section#controls {
   display: flex;
