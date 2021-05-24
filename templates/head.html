@@ -12,17 +12,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="icons/favicon.ico">
+<link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 
 <link rel="stylesheet" href="bonsai.css">
 <link rel="stylesheet" href="style.css">
 <!-- Configure and load Thebe !-->
+
+{% if localhost == False %}
 <script type="text/x-thebe-config">
-	{ requestKernel: true, bootstrap: true, binderOptions: { repo: "{{repo}}", }, codeMirrorConfig: { theme:
+  
+  { requestKernel: true, bootstrap: true, binderOptions: { repo: "{{repo}}", }, codeMirrorConfig: { theme:
 	"abcdef" }, savedSession: {     
       enabled: false}}
 </script>
+
+{% else %}
+<script type="text/x-thebe-config">
+{
+    bootstrap: true,
+    kernelOptions: { name: "python3", serverSettings: {"baseUrl": "http://127.0.0.1:8888",
+        "token": "t0k3n"}
+      },
+    }
+</script>
+{% endif %}
+
 <script src="https://unpkg.com/thebe@latest/lib/index.js">
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

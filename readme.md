@@ -32,6 +32,13 @@ Press the `SAVE SNIP` button and enter a name for the snip, along with the passw
 - To be able to use additional Python packages, link your repl to a GitHub repo, add the required packages to `requirements.txt`, and push your changes.
 
 
+#### Use your local environment (beta)
+
+- It is possible to use your local computer, rather than a Binder kernel, to run your code. This also means you'll have access to packages (and files) you've installed locally. You'll need to have Jupyter notebook installed to do this and run a command on the Terminal.
+
+To enable this feature, remove the `{#` and `#}` tags from `index.html` in the `templates` folder and re-run the repl. Click the (now visible) `USE LOCALHOST` button for more details, and change the `url` value in `main.py` accordingly.
+
+
 #### Images and other resources
 
 Images within the `notebooks/images` folder will be copied to `static/images` when `initialize()` is run, and visible on Snippy if they have been referenced in a markdown cell (or in an `<img>` tag under a `%%html` magic).

@@ -1,15 +1,26 @@
 :root {
     --blue: #397cae;
-    --orange: #fccc3b;
+}
+
+html { visibility: hidden; 
 }
 
 
-li.success {
+.info {
+  color: var(--blue);
+}
+
+.command {
+  font-family: monospace;
+}
+
+.success {
   color: var(--green);
 }
 
-li.error {
+.error {
   color: var(--red);
+  text-transform: uppercase;
 }
 
 nav > form {
@@ -81,8 +92,8 @@ div.thebelab-input {
   color: var(--green);
 }
 
-.thebelab-button,
-.localhost
+.thebelab-button
+
  { 
   text-transform: uppercase;
   margin: 0.5rem;
@@ -92,14 +103,25 @@ div.thebelab-input {
   background-color: #fff;
 }
 
-.thebelab-button:hover,
-.localhost:hover
+.thebelab-button:hover
  {
   color: #fff;
   background-color: var(--primary);
 }
 
+#localhost { 
+  text-transform: uppercase;
+  margin: 0.5rem;
+  padding: 0rem 0.5rem;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  background-color: #fff;
+}
 
+#localhost:hover {
+  color: #fff;
+  background-color: var(--orange);
+}
 
 .thebelab-restart-button,
 .thebelab-restartall-button {

@@ -1,5 +1,6 @@
 <form action="." method="POST" id="save-form">
-  <input type="hidden" id="nb-code" name="nb-code" value="empty">
+  <input type="hidden" id="nb-code" name="nb-code" value="">
+  <input type="hidden" name="operation" value="save">
   <label for="filename">Snip name</label>
   <input type="text" placeholder="name (without file extension)" value="{{ filename }}" id="filename" name="filename" required>
   <label for="password">Password</label>

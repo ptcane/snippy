@@ -8,8 +8,29 @@ function show_save() {
   x.classList.toggle("hidden");
 }
 
+function clear_outputs() {
+
+  const outputs = document.querySelectorAll(".jp-OutputArea")
+  outputs.forEach(output => {
+    output.innerHTML = ""
+  })
+}
+
+function add_cell() {
+  try {
+  let x = document.querySelector(".new-cell");
+  x.outerHTML = x.innerHTML;
+  }
+  catch {
+    let nb = document.querySelector("#notebook");
+    nb.insertAdjacentHTML('beforeend', '<p class="error">Cell limit reached!</p>');
+  }
+
+}
+
 document.querySelector("#load").addEventListener('click', show_operations)
 document.querySelector("#save").addEventListener('click', show_save)
+document.querySelector("#add-cell").addEventListener('click', add_cell)
 
 var bootstrapThebe = function() {
     thebelab.bootstrap();
@@ -52,8 +73,9 @@ $(function save_snip() {
 })
 })
 
-$(function add_cell() {
-  $('#add-cell-form').submit(function() {
+
+$(function use_localhost() {
+  $('#use-localhost-form').submit(function() {    
   let notebook = document.querySelector("#notebook").innerHTML;
   const cell_blocks = document.querySelectorAll(".thebelab-cell")
   cell_blocks.forEach(cell => {
@@ -62,7 +84,11 @@ $(function add_cell() {
   
   
   nb = document.querySelector("#notebook")
-  nb.insertAdjacentHTML('beforeend', '<pre></pre>')
-  document.querySelector("#add-cell-input").setAttribute("value",document.querySelector("#notebook").innerHTML)
+  document.querySelector("#snip-localhost").setAttribute("value",document.querySelector("#notebook").innerHTML)
 })
 })
+
+$(document).ready(function() {
+  document.querySelector(".thebelab-restart-button").addEventListener('click', clear_outputs)
+  document.getElementsByTagName("html")[0].style.visibility = "visible";
+});

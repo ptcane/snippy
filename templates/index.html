@@ -4,21 +4,39 @@
   {% include 'operations.html' %}
   </section>
     <section id="kernel">
-      <div><h5>Kernel: <span id="status"></span></h5>
+      <div><h5>Kernel: <span id="status">{% if localhost == True %}LOCAL{% endif %}</span></h5>
       </div>
-      {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <ul class=flashes>
-    {% for category, message in messages %}
-      <li class="{{ category }}">{{ message }}</li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
+      {#
+
+      {% if localhost == True %}
+      <form id="use-localhost-form" action="." method="POST">
+      <input id="snip-localhost" type="hidden" name="nb-code" value=""></input>
+      <input type="hidden" name="operation" value="disconnect"></input>
+      <input id="localhost" type="submit" value="disconnect localhost"></input>
+      </form>
+      {% else %}
+
+      <form id="use-localhost-form" action="." method="POST">
+      <input id="snip-localhost" type="hidden" name="nb-code" value=""></input>
+      <input type="hidden" name="operation" value="localhost"></input>
+      <input id="localhost" type="submit" value="use localhost"></input>
+      </form>
+      {% endif %}
+
+      #}
     </section>
 
 <section id="notebook">
   
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    
+    {% for category, message in messages %}
+      <p class="{{ category }}">{{ message }}</p>
+    {% endfor %}
+    
+  {% endif %}
+{% endwith %}  
 
 {% if current %}
 {{ current|safe }}
@@ -28,13 +46,23 @@
 {% include snip + '.html' %}
 {% endif %}
 
+{% for n in range(50) %}
+<div class="new-cell hidden">
+<pre><code class="language-python"></code></pre>
+</div>
+{% endfor %}
+
 </section>
 <a id="control_anchor"></a>
 <section id="controls">
+  <!--
   <form action=".#control_anchor" method="POST" id="add-cell-form">
-    <input type="hidden" id="add-cell-input" name="nb-code" value="add-cell">  
+    <input type="hidden" id="add-cell-input" name="nb-code" value="">
+    <input type="hidden" name="operation" value="add-cell">
   <input type="submit" value="Add Cell" id="add-cell">
   </form>
+  -->
+  <button id="add-cell">Add Cell</button> 
   <button id="save">Save</button> 
 </section>
 <section id="save-section" class="hidden">
